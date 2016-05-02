@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quotes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,76 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="109" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GkT-qt-5Zd">
+                                <rect key="frame" x="0.0" y="28" width="600" height="572"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuoteCell" rowHeight="109" id="oql-6T-2vj" customClass="QuoteCell" customModule="Quotes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="109"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oql-6T-2vj" id="fqr-RO-oik">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="108.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OV1-AR-9Zw">
+                                                    <rect key="frame" x="8" y="8" width="52" height="19.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O77-c2-63h">
+                                                    <rect key="frame" x="8" y="35.5" width="584" height="61.5"/>
+                                                    <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="O77-c2-63h" firstAttribute="top" secondItem="OV1-AR-9Zw" secondAttribute="bottom" constant="8.5" id="3m8-xz-FOm"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="O77-c2-63h" secondAttribute="bottom" constant="3.5" id="66f-fv-7dz"/>
+                                                <constraint firstItem="OV1-AR-9Zw" firstAttribute="top" secondItem="fqr-RO-oik" secondAttribute="topMargin" id="Bd1-6e-UjY"/>
+                                                <constraint firstItem="O77-c2-63h" firstAttribute="leading" secondItem="fqr-RO-oik" secondAttribute="leadingMargin" id="FRN-fQ-0sp"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="O77-c2-63h" secondAttribute="bottom" constant="8" id="NAX-KG-ROY"/>
+                                                <constraint firstItem="OV1-AR-9Zw" firstAttribute="leading" secondItem="fqr-RO-oik" secondAttribute="leadingMargin" id="Po9-nX-PZe"/>
+                                                <constraint firstItem="O77-c2-63h" firstAttribute="trailing" secondItem="fqr-RO-oik" secondAttribute="trailingMargin" id="ZQe-No-B6r"/>
+                                                <constraint firstItem="O77-c2-63h" firstAttribute="trailing" secondItem="fqr-RO-oik" secondAttribute="trailingMargin" id="d9T-Wb-RX2"/>
+                                                <constraint firstItem="O77-c2-63h" firstAttribute="top" secondItem="OV1-AR-9Zw" secondAttribute="bottom" constant="8" id="dbJ-TW-8Lz"/>
+                                                <constraint firstItem="O77-c2-63h" firstAttribute="leading" secondItem="fqr-RO-oik" secondAttribute="leadingMargin" id="ppM-rb-2dc"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="3m8-xz-FOm"/>
+                                                    <exclude reference="FRN-fQ-0sp"/>
+                                                    <exclude reference="NAX-KG-ROY"/>
+                                                    <exclude reference="ZQe-No-B6r"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorLabel" destination="OV1-AR-9Zw" id="dXl-4O-rxu"/>
+                                            <outlet property="quoteLabel" destination="O77-c2-63h" id="nhw-Tk-CPB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GkT-qt-5Zd" secondAttribute="bottom" id="705-ha-LRJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GkT-qt-5Zd" secondAttribute="trailing" constant="-20" id="MEq-yj-044"/>
+                            <constraint firstItem="GkT-qt-5Zd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Yne-CU-QIJ"/>
+                            <constraint firstItem="GkT-qt-5Zd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="g26-nF-oZD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="GkT-qt-5Zd" id="grc-zs-VEZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="452" y="387"/>
         </scene>
     </scenes>
 </document>
