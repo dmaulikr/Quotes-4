@@ -9,6 +9,6 @@
 import Foundation
 
 struct Quote {
-    let author: String
-    let text: String
+	let author: String
+	let text: String
 }
